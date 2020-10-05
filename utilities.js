@@ -1,1 +1,4 @@
-export function renderBook 
+export function renderKittens() {
+    return '';
+
+}

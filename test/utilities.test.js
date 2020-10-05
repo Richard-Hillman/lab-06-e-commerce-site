@@ -1,19 +1,31 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { renderBook } from '../utilities.js';
+import { renderKittens } from '../utilities.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('Should take in a kitten and return appropriate attire', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = true;
+    const kitten = {  
+        title: 'CAT MASK',
+        brand: 'PAWDDYMOUTH',
+        previewImage: '../assets/kittenmask.jpg',
+        description: 'Is your cat a pawddy mouth? Shut em up NOW! Buy the kitty face stopper now! WARNING: Product does not significantly quiet cat and may cause noiser cat as unintended side effect.',
+        price: '$93.00',
+        idValue: 'Add to cart', 
+    };
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = false;
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    
+    const expected = '<li><p class="title">CAT MASK</p><p class="brand">PAWDDYMOUTH</p><img class="preview-image" src="../assets/kittenmask.jpg"><p class="description">Is your cat a pawddy mouth? Shut em up NOW! Buy the kitty face stopper now! WARNING: Product does not significantly quiet cat and may cause noiser cat as unintended side effect. </p><p class="price">$93.00</p><p class="id">ID #</p><button class="id-value"> Add to cart </button></li>';
+    
+    const actual = renderKittens(kitten);
+    
+    expect.equal(actual.outerHTML, expected);
+
 });
