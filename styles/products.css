@@ -2,6 +2,14 @@ body {
     background-image: url(../assets/catback.jpg);
 }
 
+h1 { 
+    font-size: 45px;
+}
+
+.meow-shot > img {
+    height: 400px;
+}
+
 .kitten-clothes {
     border:2px;
     border-color: black;
