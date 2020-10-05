@@ -1,0 +1,15 @@
+.book {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border: solid 1px;
+    border-radius: 10px;
+}
+
+.book > img {
+    width: 100px;
+}
+
+.book > p {
+    margin: 0;
+}
