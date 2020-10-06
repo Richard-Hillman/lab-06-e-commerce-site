@@ -29,3 +29,26 @@ test('Should take in a kitten and return appropriate attire', (expect) => {
     expect.equal(actual.outerHTML, expected);
 
 });
+
+import { renderTableRow } from '../kart/kart.js';
+
+const test = QUnit.test;
+
+test('should take in a kitten and return a tr element with appropriate contents', (expect) => {
+    const cartItem = {
+        id: ''
+        quantity: 3
+
+    };
+
+
+    const expected = '<tr><td>'
+
+    const actual = renderTableRow(cartItem);
+
+    expect.equal(actual.outerHTML, expected);
+
+    return tr;
+    
+
+});
