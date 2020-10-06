@@ -1,4 +1,4 @@
-export const kitten =[
+export const kitten = [
     {  
         title: 'CAT MASK',
         brand: 'PAWDDYMOUTH',
