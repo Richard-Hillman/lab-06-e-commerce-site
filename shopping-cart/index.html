@@ -35,17 +35,19 @@
             <section class='table1'>
            
                 <table>
-                    <tbody>
+                    <thead>
                         <tr>
                             <th>Title</th>
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Subtotal</th>
                         </tr>
+                    </thead>
+                    <tbody>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td id='grandTotal' >Total</td>
+                            <td class="grandTotal"></td>
                         </tr>
                     </tfoot>
                         
@@ -70,6 +72,9 @@
    
     </footer>
 
+    <script type="module" src="./kart.js"></script>
+    <script type="module" src="../utils.js"></script>
+    <script type="module" src="../products/data.js"></script>
     <script type="module" src="./kart.utilities.js"></script>
 </body>
 

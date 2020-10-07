@@ -3,8 +3,12 @@
 
 // IMPORTS------------------------------------------------------------------------------------------------------
 import { renderKittens } from '../products/kitty-render.js';
-import { findById } from '../utils.js';
+// import { findById, calcTotal } from '../utils.js';
+// import { kittens, cartArray } from '../products/data.js';
+import { findById, calcTotal } from '../utils.js';
 import { kittens } from '../products/data.js';
+
+
 
 // --------------------------------------------------------------------------------------------------
 
@@ -64,9 +68,53 @@ test('go through an array and return the cerealNumber of my findById function', 
     expect.deepEqual(actual, expected);
 });
 
+// END OF FINDBYID-----------------------------------------------------------------------------------------------------------------------------
 
 
-// -----------------------------------------------------------------------------------------------------------------------------
+// CALCTOTAL TEST ----------------------------------------------------------------------------------------------------------------------------
+test('Write a function that returns value of quantity times item price aka line price', (expect) => {
+    //Arranimport { findById, calcTotal } from '../utils.js';
+    const cartArray = [
+        {
+            id: 'mask1',
+            quantity: 1, 
+        },
+        {
+            id: 'bag1',
+            quantity: 1,
+        },
+        {
+            id: 'net1',
+            quantity: 1,
+        },
+        {
+            id: 'mitten1',
+            quantity: 1,
+        },
+        {
+            id: 'bunny1',
+            quantity: 1,
+        },
+    ];
+    
+    
+    // Set up your arguments and expectations
+    const expected = 639;
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    
+    const actual = calcTotal(cartArray, kittens); 
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.equal(actual, expected);
+    
+    
+});
+
+// END CALCLINEITEM TEST -----------------------------------------------------------------------------------------------------------------------
+
+
 // RENDER TABLE TDD
 
 // import { renderTableRow } from '../shopping-cart/kart.utilities.js';

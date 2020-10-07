@@ -4,7 +4,7 @@ export const kittens = [
         brand: 'PAWDDYMOUTH',
         previewImage: '../assets/kittenmask.jpg',
         description: 'Is your cat a pawddy mouth? Shut em up NOW! Buy the kitty face stopper now! WARNING: Product does not significantly quiet cat and may cause noiser cat as unintended side effect.',
-        price: 93.00,
+        price: 93,
         id: 'mask1',
     }, 
 
@@ -13,7 +13,7 @@ export const kittens = [
         brand: 'PAWSIONALY FUN',
         previewImage: '../assets/kitten.jpg',
         description: 'Does your cat look like garbage? Put them in a bag! (Fully breathable bag) WARNING: DO not put cat head in bag.',
-        price: 47.00,
+        price: 47,
         id: 'bag1',
     },
 
@@ -22,7 +22,7 @@ export const kittens = [
         brand: 'PAWTACULAR',
         previewImage: '../assets/kittenmit3.jpg',
         description: 'Your cat has claws and paws! Put SOME MITTENS ON THEM OR get PAWNCHED',
-        price: 85.00,
+        price: 85,
         id: 'mitten1',
     }, 
 
@@ -31,7 +31,7 @@ export const kittens = [
         brand: 'PAWNGERIE',
         previewImage: '../assets/kittensink.jpg',
         description: 'Is your cat getting ready for a night in heat. Get them in our sexy cat net and give them a bath!',
-        price: 411.00,
+        price: 411,
         id: 'net1',
     }, 
 
@@ -40,9 +40,38 @@ export const kittens = [
         brand: 'PAWBUN',
         previewImage: '../assets/catbunny.jpg',
         description: 'Don\'t like you\'re cat? turn them into a bunny!',
-        price: 3.00,
+        price: 3,
         id: 'bunny1',
     } 
 
 ];
+
+// stubs for cart 
+
+export const cartArray = [
+    {
+        id: 'mask1',
+        quantity: 1, 
+    },
+    {
+        id: 'bag1',
+        quantity: 1,
+    },
+    {
+        id: 'net1',
+        quantity: 1,
+    },
+    {
+        id: 'mitten1',
+        quantity: 1,
+    },
+    {
+        id: 'bunny1',
+        quantity: 1,
+    },
+
+
+];
+
+
 
