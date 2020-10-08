@@ -1,24 +1,20 @@
 import { renderTableRow } from './kart.utilities.js';
-import { cartArray, kittens } from '../products/data.js';
+import { kittens } from '../products/data.js';
 import { calcTotal } from '../utils.js';
-import { getFromLocalStorage, CART } from '../products/kitty-render.js'
+import { getFromLocalStorage } from '../products/kitty-render.js';
 
 const table = document.querySelector('tbody');
-const orderButton = document.querySelector('button')
+const orderButton = document.querySelector('button');
+const cart = getFromLocalStorage('CART') || [];
 
-const cart = getFromLocalStorage(CART) || [];
-
-for (let i = 0; i < cartArray.length; i++) {
-    const kitty = cartArray[i];
-    
-    if (kittens.quantity >= 0) {
-        const tr =renderTableRow(kitten);
-        table.appendChild(tr);
-    }
+for (let i = 0; i < cart.length; i++) {
+    const kitty = cart[i];
+    const tr = renderTableRow(kitty);
+    table.appendChild(tr);
 }
 
 const totalCell = document.querySelector('.grandTotal');
-const total = calcTotal(cartArray, kittens);
+const total = calcTotal(cart, kittens);
 
 totalCell.textContent = `total: ${total}`;
 
@@ -33,11 +29,3 @@ orderButton.addEventListener('click', () => {
 
 // 
 
-
-// const table = document.querySelector('tbody');
-// for (let i = 0; i < cartArray.length; i++) {
-//     const kitty = cartArray[i];
-    
-//     const tr = renderTableRow(kitty);
-//     table.appendChild(tr);
-// }

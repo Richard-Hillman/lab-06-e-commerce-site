@@ -1,4 +1,4 @@
-import { findById } from '../utils';
+import { findById } from '../utils.js';
 
 
 export function renderKittens(kitten) {
