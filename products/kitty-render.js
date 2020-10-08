@@ -1,11 +1,5 @@
-/* 
-title: 'CAT MASK',
-brand: 'PAWDDYMOUTH',
-previewImage: '../assets/kittenmask.jpg',
-description: 'Is your cat a pawddy mouth? Shut em up NOW! Buy the kitty face stopper now! WARNING: Product does not significantly quiet cat and may cause noiser cat as unintended side effect.',
-price: 93.00,
-idValue: 'a1',
-*/
+import { findById } from '../utils';
+
 
 export function renderKittens(kitten) {
 
@@ -43,10 +37,42 @@ export function renderKittens(kitten) {
 
     const button = document.createElement('button');
     button.textContent = 'Add to cart';
-    li.appendChild(button);
-
     
+    button.addEventListener('click', () => {
+        const cart = getFromLocalStorage('CART') || [];  
+
+        const itemInCart = findById(cart, kitten.id);
+
+        if (itemInCart === undefined) {
+
+            const newCartItem = {
+                id: kitten.id,
+                quantity: 1
+            };
+
+            cart.push(newCartItem);
+        } else {
+            itemInCart.quantity++;
+        }
+
+        setInLocalStorage('CART', cart);
+    });
+    
+    li.appendChild(button);
 
     return li;
 
+}    
+    
+export function getFromLocalStorage(key) {
+    const retrievedKey = localStorage.getItem(key);
+    return JSON.parse(retrievedKey);
 }
+    
+   
+export function setInLocalStorage(key, value) {
+    const stringifiedItem = JSON.stringify(value);
+    localStorage.setItem(key, stringifiedItem);   
+}
+    
+

@@ -46,32 +46,32 @@ export const kittens = [
 
 ];
 
-// stubs for cart 
+// // stubs for cart 
 
-export const cartArray = [
-    {
-        id: 'mask1',
-        quantity: 1, 
-    },
-    {
-        id: 'bag1',
-        quantity: 1,
-    },
-    {
-        id: 'net1',
-        quantity: 1,
-    },
-    {
-        id: 'mitten1',
-        quantity: 1,
-    },
-    {
-        id: 'bunny1',
-        quantity: 1,
-    },
+// export const cartArray = [
+//     {
+//         id: 'mask1',
+//         quantity: 1, 
+//     },
+//     {
+//         id: 'bag1',
+//         quantity: 1,
+//     },
+//     {
+//         id: 'net1',
+//         quantity: 1,
+//     },
+//     {
+//         id: 'mitten1',
+//         quantity: 1,
+//     },
+//     {
+//         id: 'bunny1',
+//         quantity: 1,
+//     },
 
 
-];
+// ];
 
 
 
