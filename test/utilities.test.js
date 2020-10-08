@@ -3,12 +3,10 @@
 
 // IMPORTS------------------------------------------------------------------------------------------------------
 import { renderKittens } from '../products/kitty-render.js';
-// import { findById, calcTotal } from '../utils.js';
-// import { kittens, cartArray } from '../products/data.js';
-import { findById, calcTotal } from '../utils.js';
-import { kittens } from '../products/data.js';
-
-
+import { calcTotal, findById } from '../utils.js';
+import { kittens, cartArray } from '../products/data.js';
+import { calcLineSub } from '../utils.js';
+import { renderTableRow } from '../shopping-cart/kart.utilities.js';
 
 // --------------------------------------------------------------------------------------------------
 
@@ -71,9 +69,37 @@ test('go through an array and return the cerealNumber of my findById function', 
 // END OF FINDBYID-----------------------------------------------------------------------------------------------------------------------------
 
 
+
+// CALCLINESUB TEST ----------------------------------------------------------------------------
+
+test('calculate the amount of a line item', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const price = 10;
+    const quantity = 2; 
+    const expected = 20; 
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = calcLineSub(quantity, price);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+
+});
+
+// ------------------------------------------------------------------------------------------------
+
+// CALTOTAL TEST-----------------------------------------------------------------------------------
+
+
+
 // CALCTOTAL TEST ----------------------------------------------------------------------------------------------------------------------------
+
+
 test('Write a function that returns value of quantity times item price aka line price', (expect) => {
-    //Arranimport { findById, calcTotal } from '../utils.js';
+
     const cartArray = [
         {
             id: 'mask1',
@@ -97,14 +123,20 @@ test('Write a function that returns value of quantity times item price aka line 
         },
     ];
     
+
+
+
+    const actual = calcTotal(cartArray, kittens);
+    
+    const expected = 639;
+
     
     // Set up your arguments and expectations
-    const expected = 639;
     
     //Act 
     // Call the function you're testing and set the result to a const
     
-    const actual = calcTotal(cartArray, kittens); 
+   
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
@@ -115,24 +147,25 @@ test('Write a function that returns value of quantity times item price aka line 
 // END CALCLINEITEM TEST -----------------------------------------------------------------------------------------------------------------------
 
 
-// RENDER TABLE TDD
-
-// import { renderTableRow } from '../shopping-cart/kart.utilities.js';
+// RENDER TABLE TDD------------------------------------------------------------------------------------
 
 
-// test('should take in a kitten and return a tr element with appropriate contents', (expect) => {
-//     const cartItem = {
-//         cerealNumber: 'mask1',
-//         quantity: 3,
-//     };
 
 
-//     const expected = '<tr><td>Cat Mask</td><td>PAWDYMOUTH</td><td>93.00</td><td>1</td><td>93.00</td></tr>';
+test('should take in a kitten and return a tr element with appropriate contents', (expect) => {
+    
+    const cartItem = {
+        id: 'mask1',
+        quantity: 1, 
+    };
 
-//     const actual = renderTableRow(cartItem);
+    const expected = '<tr><td>CAT MASK</td><td>$93.00</td><td>1</td><td>$93.00</td></tr>';
 
-//     expect.equal(actual.outerHTML, expected);
+    const actual = renderTableRow(cartItem);
 
-// });
+    expect.equal(actual.outerHTML, expected);
+
+    
+});
 
 // End Render TAble TDD------------------------------------------------------------------------------------------------------------

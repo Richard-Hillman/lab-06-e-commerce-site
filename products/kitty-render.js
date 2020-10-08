@@ -45,6 +45,8 @@ export function renderKittens(kitten) {
     button.textContent = 'Add to cart';
     li.appendChild(button);
 
+    
+
     return li;
 
 }
