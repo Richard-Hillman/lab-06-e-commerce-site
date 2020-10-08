@@ -1,6 +1,7 @@
 
 import { kittens } from '../products/data.js';
 import { findById } from '../utils.js';
+import { calcLineSub } from '../utils.js';
 
 // Render Table Function----------------------------------------------------
 
@@ -11,35 +12,45 @@ export function renderTableRow(cartItem) {
     const tdQuantity = document.createElement('td');
     const tdTotal = document.createElement('td');
     
+
     // texting item where I want it to go 
-    tdQuantity.textContent = cartItem.quantity;
     
     // er need the name and price
     // the name of the price of the kitten item live in the source of truth 
     // we should use our findByIf function to get the data from source of truth 
     
     const kittenData = findById(kittens, cartItem.id);
-    
+    const title = kittenData.title;
+
+    const price = (kittenData.price).toFixed(2);
+    const total = calcLineSub(cartItem.quantity, kittenData.price);
+    const subTotal = total.toFixed(2);
     // data is an object that has tittle brand imade description price total 
     
-    const price = kittenData.price;
-    const title = kittenData.title;
-    
-    tdPrice.textContent = `${price}`;
     tdTitle.textContent = title;
+    tdPrice.textContent = `$${price}`;
+    tdQuantity.textContent = cartItem.quantity;
+    tdTotal.textContent = `$${subTotal}`;
     
-    const total = price * cartItem.quantity;
-    // needs to be function
-    tdTotal.textContent = `${price * cartItem.quantity}`;
-    
-    // appending everything to table
     tr.append(tdTitle, tdPrice, tdQuantity, tdTotal);
+
+    
+    return tr;
+}
+// issue=========================================================================================================
+// const subTotal = calcLineSub(cartItem.quantity, cartItem.price); 
+
+    // needs to be function
+  
+//================================================================================================================
+
+
+    // appending everything to table
     
     //  returning table
-    return tr;
+   
     
     // END Render TABLE FUNCTION--------------------------------------------------------------------------
-}
 // TOTAL FUnction-----------------------------------------------------------
 
 
