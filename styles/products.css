@@ -24,6 +24,18 @@ td {
     border: 2px solid tomato;
 }
 
+header {
+    align-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
 .noBord { 
     border: none;
 }
