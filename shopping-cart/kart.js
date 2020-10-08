@@ -16,7 +16,7 @@ for (let i = 0; i < cart.length; i++) {
 const totalCell = document.querySelector('.grandTotal');
 const total = calcTotal(cart, kittens);
 
-totalCell.textContent = `total: ${total}`;
+totalCell.textContent = `total: $${total}`;
 
 orderButton.addEventListener('click', () => {
     const stringyCart = JSON.stringify(cart, true, 2);
