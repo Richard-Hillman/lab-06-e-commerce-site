@@ -19,6 +19,31 @@ li {
     border: 4px solid springgreen;
 }
 
+td {
+    padding: 10px;
+    border: 2px solid tomato;
+}
+
+header {
+    align-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
+.noBord { 
+    border: none;
+}
+
+.grandTotal {
+    border: 5px solid green
+}
+
 .table1 {
     border: 4px solid tomato;
 }
