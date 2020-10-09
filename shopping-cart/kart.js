@@ -1,7 +1,8 @@
 import { renderTableRow } from './kart.utilities.js';
-import { kittens } from '../products/data.js';
-import { calcTotal } from '../utils.js';
+import { calcTotal, getImpoundedKittens } from '../utils.js';
 import { getFromLocalStorage } from '../products/kitty-render.js';
+
+const localStorageKittens = getImpoundedKittens();
 
 const table = document.querySelector('tbody');
 const orderButton = document.querySelector('button');
@@ -14,7 +15,7 @@ for (let i = 0; i < cart.length; i++) {
 }
 
 const totalCell = document.querySelector('.grandTotal');
-const total = calcTotal(cart, kittens);
+const total = calcTotal(cart, localStorageKittens);
 
 totalCell.textContent = `total: $${total}`;
 

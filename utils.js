@@ -1,3 +1,7 @@
+import { kittens as hardCats } from './products/data.js';
+import { PRODUCTS } from './constants.js';
+import { setInLocalStorage } from './products/kitty-render.js';
+
 // --------------------------------------------------------------------------------
 
 
@@ -8,6 +12,24 @@ export function findById(someArray, someId) {
             return item;
         }
     }
+}
+
+
+// ---------------------------------------------------------------------------------
+
+
+export function getImpoundedKittens() {
+
+    let localStorageKittens = JSON.parse(localStorage.getItem(PRODUCTS));
+
+    if (!localStorageKittens) {
+        const stringyKittens = JSON.stringify(hardCats);
+        localStorage.setItem(PRODUCTS, stringyKittens);
+        localStorageKittens = hardCats;
+    }
+
+    return localStorageKittens;
+
 }
 
 
@@ -35,3 +57,14 @@ export function calcTotal(cartArray, item) {
 
 
 // ---------------------------------------------------------------------------------
+
+export function addKitten(myKitten) {
+// get kitten array from data
+    const productArray = getImpoundedKittens(PRODUCTS);
+// push new kitten into array
+    productArray.push(myKitten);
+// save the kitten in product array 
+    setInLocalStorage(PRODUCTS, productArray);
+
+}
+
