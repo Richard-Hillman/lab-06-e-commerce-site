@@ -1,8 +1,8 @@
-
-import { kittens } from '../products/data.js';
 import { findById } from '../utils.js';
 import { calcLineSub } from '../utils.js';
+import { getImpoundedKittens } from '../utils.js';
 
+const localStorageKittens = getImpoundedKittens();
 // Render Table Function----------------------------------------------------
 
 export function renderTableRow(cartItem) {
@@ -18,7 +18,7 @@ export function renderTableRow(cartItem) {
     // er need the name and price
     // the name of the price of the kitten item live in the source of truth 
     // we should use our findByIf function to get the data from source of truth 
-    const kittenData = findById(kittens, cartItem.id);
+    const kittenData = findById(localStorageKittens, cartItem.id);
     
     const title = kittenData.title;
     tdTitle.textContent = title;
